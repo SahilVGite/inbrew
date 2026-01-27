@@ -11,7 +11,24 @@ $(document).ready(function () {
   $(".hamburger").on("click", function () {
     $(this).toggleClass("active");
     $(".siteNav").toggleClass("active");
-    $("body").toggleClass("menuOpen"); // stop body scroll
+    $("body").toggleClass("menuOpen");
+
+    if ($(this).hasClass("active")) {
+      // menu opening → add overlay if not already present
+      if (!$(".menuOverlay").length) {
+        $(".headSec").append('<div class="menuOverlay"></div>');
+      }
+    } else {
+      // menu closing → remove overlay
+      $(".menuOverlay").remove();
+    }
+  });
+
+  $(document).on("click", ".menuOverlay", function () {
+    $(".siteNav").removeClass("active");
+    $(".hamburger").removeClass("active");
+    $("body").removeClass("menuOpen");
+    $(this).remove();
   });
 
   // Close menu when clicking a link
@@ -19,8 +36,9 @@ $(document).ready(function () {
     $(".siteNav").removeClass("active");
     $(".hamburger").removeClass("active");
     $("body").removeClass("menuOpen"); // enable body scroll
+    $(".menuOverlay").remove();
   });
-  
+
   // Footer scroll to top button
   $('.footToTopBtn').on('click', function () {
     $('html, body').animate({
@@ -39,6 +57,19 @@ $(document).ready(function () {
     arrows: false
   });
 
+  $('.commBannerSec').slick({
+    infinite: true,
+    slidesToShow: 1,
+    slidesToScroll: 1,
+    autoplay: true,
+    autoplaySpeed: 3000,
+    infinite: true,
+    arrows: false,
+    fade: true,
+    cssEase: 'linear',
+    pauseOnHover: false,
+  });
+
   $('.beveragesFutureSlider').slick({
     infinite: true,
     slidesToShow: 3,
@@ -53,6 +84,22 @@ $(document).ready(function () {
     pauseOnHover: false,
     cssEase: 'linear',
     rtl: true,
+    responsive: [
+      {
+        breakpoint: 992,
+        settings: {
+          slidesToShow: 2,
+          slidesToScroll: 2,
+        }
+      },
+      {
+        breakpoint: 610,
+        settings: {
+          slidesToShow: 1,
+          slidesToScroll: 1
+        }
+      },
+    ]
   });
 
 });

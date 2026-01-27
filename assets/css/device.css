@@ -1,19 +1,72 @@
-@media screen and (max-width:1680px){}
+@media screen and (max-width:1680px){
+    :root{--fs-title:40px;--fs-title-sub:20px;--fs-sub-txt:18px;--fs-body:16px;--fs-body-txt:14px;--fs-body-sub:12px;--fs-links:10px;--sv-gap:60px;}
+    .headWrapper{max-width: 95.439%;margin-inline: auto;}
+    .main-wrapper{max-width: 84.211%;margin-inline: auto;}
+    .siteLogo{max-width: 106px;}
+    main{margin-top: 80px;}
+    .beveragesFutureSlider{padding-block: calc(var(--sv-gap) * 1.5);direction: rtl;}
+    .beveragesFutureSlide{padding-inline: calc(var(--sv-gap)*2.5);}
+    .footSocailLink{max-width: 24px;}
+}
 @media screen and (max-width:1600px){}
 @media screen and (max-width:1540px){}
 @media screen and (max-width:1500px){}
-@media screen and (max-width:1400px){}
+@media screen and (max-width:1400px){
+    .footToTopBtn{top: -30px;max-width:60px;}
+}
 @media screen and (max-width:1366px){}
 @media screen and (max-width:1300px){}
-@media screen and (max-width:1130px){}
+@media screen and (max-width:1130px){
+    :root{--fs-title:38px;--fs-title-sub:18px;--fs-sub-txt:17px;--fs-body:15px;--fs-body-txt:13px;--fs-body-sub:11px;--fs-links:10px;--sv-gap:50px;}
+    .beveragesFutureSlide{padding-inline: calc(var(--sv-gap)*1);}
+    .footLinks{column-gap:2.562em;row-gap:1em;}
+    .footLogo{max-width:140px;}
+}
 @media screen and (max-width:1024px){}
-@media screen and (max-width:992px){}
-@media screen and (max-width:820px){}
-@media screen and (max-width:768px){}
+@media screen and (max-width:992px){
+    nav.siteNav{position: fixed;right: -450px;top: 0;background-color: var(--color-primary);width: 100%;max-width: 400px;height: 100%;z-index: 999;padding: 6em 1em 1em 2em;box-shadow: rgba(255, 255, 255, 0.25) 0px 54px 55px, rgba(255, 255, 255, 0.12) 0px -12px 30px, rgba(255, 255, 255, 0.12) 0px 4px 6px, rgba(255, 255, 255, 0.17) 0px 12px 13px, rgba(255, 255, 255, 0.09) 0px -3px 5px;transition: all 0.5s;}
+    nav.siteNav.active{right: 0px;}
+    .siteMenu nav > ul.d-flex{flex-direction: column;align-items: flex-start;}
+    .siteMenu nav > ul > li > a{color: var(--color-white);font-size: var(--fs-sub-txt);}
+    main{margin-top: 74px;}
+    .hamburger{display: flex;}
+    .defineUsCard .defineUsCardBtn,.defineUsCard .defineUsCardDesc,.defineUsCard .defineUsCardTitle{transform: translateY(0px);opacity: 1;}
+    .defineUsCard .defineUsCardTxt::before{transform:scale(1);border-radius: 0;}
+}
+@media screen and (max-width:820px){
+    .brewingCard{width: calc(50% - 20px);}
+    .footLinks{column-gap:4.562em;max-height:calc(1.5em * 7);}
+    .hmBannerSec::before,.commBannerCont::before{background:rgba(0,0,0,0.6);}
+    .defineUsCards,.defineUsCards > *{gap: 1.5em;}
+    .defineUsCardTxt{padding:1em;}
+    .siteLogo{max-width:90px;}
+
+}
+@media screen and (max-width:768px){
+    .defineUsCardCol2{margin-top:1.4375em;}
+}
+@media screen and (max-width:610px){
+    :root{--fs-title:30px;--fs-title-sub:16px;--fs-sub-txt:14px;--fs-body:14px;--fs-body-txt:12px;--fs-body-sub:11px;--fs-links:10px;--sv-gap:40px;}
+    .brewingCard,.footLinks{width: 100%;}
+    .footLinks{margin-top: 3em;}
+    .footContent{flex-direction: column;}
+    .footLinks{flex-direction:row;}
+    .footLink{width: 42%;}
+    .footLinks{column-gap:2.562em;}
+    .footLft{display:flex;flex-direction:column;align-items:center;}
+    .defineUsCards,.defineUsCards > *{gap:0.8em;}
+    .centerLogo{display: none;}
+    .defineUsCards{flex-direction: column;}
+    .defineUsCardCol2{margin-top: 0;flex-direction: column-reverse;}
+    .beveragesFutureSlide{padding-inline: calc(var(--sv-gap)*2);}
+    nav.siteNav{max-width: 300px;}
+}
 @media screen and (max-width:550px){}
 @media screen and (max-width:500px){}
 @media screen and (max-width:428px){}
 @media screen and (max-width:414px){}
 @media screen and (max-width:395px){}
 @media screen and (max-width:375px){}
-@media screen and (max-width:360px){}
+@media screen and (max-width:350px){
+    :root{--fs-title:24px;--fs-title-sub:15px;--fs-sub-txt:14px;--fs-body:13px;--fs-body-txt:11px;--fs-body-sub:10px;--fs-links:9px;--sv-gap:40px;}
+}
