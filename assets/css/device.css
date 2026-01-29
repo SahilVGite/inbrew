@@ -5,14 +5,53 @@
     .siteLogo{max-width: 106px;}
     main{margin-top: 80px;}
     .beveragesFutureSlider{padding-block: calc(var(--sv-gap) * 1.5);direction: rtl;}
-    .beveragesFutureSlide{padding-inline: calc(var(--sv-gap)*2.5);}
+    .beveragesFutureSlide{padding-inline: calc(var(--sv-gap)*1.5);}
     .footSocailLink{max-width: 24px;}
 }
 @media screen and (max-width:1600px){}
 @media screen and (max-width:1540px){}
-@media screen and (max-width:1500px){}
+@media screen and (max-width:1500px){
+    .beveragesFutureSlide{padding-inline: calc(var(--sv-gap)*2);}
+}
 @media screen and (max-width:1400px){
+    :root{--activeLeaderCard: 64%;}
     .footToTopBtn{top: -30px;max-width:60px;}
+    .footPrintInfoValue{font-size:var(--fs-title);}
+    .footPrintInfo > ul > li{padding-inline:2em;}
+    .commonSecTitleBottomGap{margin-bottom:0.3em;}
+    .footprintMap > svg{max-width:60%;}
+
+
+    .ourLeadersCard.active .ourLeadersCardTitle{font-size: calc(var(--fs-title-sub) + 10px);}
+    .ourLeadersCard.active{padding:1.25em 0.8em;}
+    .ourLeadersCard.active .ourLeadersCardImg{max-width:45%;}
+    .ourLeadersCard.active .ourLeadersCardTxt{width:60%;}
+    .ourLeadersCard:not(.active){padding-bottom:24em;}
+    .ourLeadersCard,.ourLeadersCards:has(.ourLeadersCard.active:nth-child(1)) > .ourLeadersCard:nth-child(4),.ourLeadersCards:has(.ourLeadersCard.active:nth-child(2)) > .ourLeadersCard:nth-child(4),.ourLeadersCards:has(.ourLeadersCard.active:nth-child(3)) > .ourLeadersCard:nth-child(4),.ourLeadersCards:has(.ourLeadersCard.active:nth-child(4)) > .ourLeadersCard:nth-child(1),.ourLeadersCards:has(.ourLeadersCard.active:nth-child(4)) > .ourLeadersCard:nth-child(2),.ourLeadersCards:has(.ourLeadersCard.active:nth-child(4)) > .ourLeadersCard:nth-child(3),.ourLeadersCards:has(.ourLeadersCard.active:nth-child(5)) > .ourLeadersCard:nth-child(7),.ourLeadersCards:has(.ourLeadersCard.active:nth-child(5)) > .ourLeadersCard:nth-child(8),.ourLeadersCards:has(.ourLeadersCard.active:nth-child(6)) > .ourLeadersCard:nth-child(7),.ourLeadersCards:has(.ourLeadersCard.active:nth-child(6)) > .ourLeadersCard:nth-child(8),.ourLeadersCards:has(.ourLeadersCard.active:nth-child(7)) > .ourLeadersCard:nth-child(5),.ourLeadersCards:has(.ourLeadersCard.active:nth-child(7)) > .ourLeadersCard:nth-child(6),.ourLeadersCards:has(.ourLeadersCard.active:nth-child(7)) > .ourLeadersCard:nth-child(8),.ourLeadersCards:has(.ourLeadersCard.active:nth-child(8)) > .ourLeadersCard:nth-child(5),.ourLeadersCards:has(.ourLeadersCard.active:nth-child(8)) > .ourLeadersCard:nth-child(6),.ourLeadersCards:has(.ourLeadersCard.active:nth-child(8)) > .ourLeadersCard:nth-child(7){width: calc(33.333% - 0.94em);padding-bottom:24em;}
+    /* If 1st card is active */
+    .ourLeadersCards:has(.ourLeadersCard.active:nth-child(1)) > .ourLeadersCard:nth-child(1){width:var(--activeLeaderCard);}
+    .ourLeadersCards:has(.ourLeadersCard.active:nth-child(1)) > .ourLeadersCard:nth-child(2),.ourLeadersCards:has(.ourLeadersCard.active:nth-child(1)) > .ourLeadersCard:nth-child(3){width:calc((100% - var(--activeLeaderCard)) / 2.3);padding-bottom:0;}
+    /* If 2nd card is active */
+    .ourLeadersCards:has(.ourLeadersCard.active:nth-child(2)) > .ourLeadersCard:nth-child(2){width:var(--activeLeaderCard);}
+    .ourLeadersCards:has(.ourLeadersCard.active:nth-child(2)) > .ourLeadersCard:nth-child(1),.ourLeadersCards:has(.ourLeadersCard.active:nth-child(2)) > .ourLeadersCard:nth-child(3){width:calc((100% - var(--activeLeaderCard)) / 2.3);padding-bottom:0;}
+    /* If 3rd card is active */
+    .ourLeadersCards:has(.ourLeadersCard.active:nth-child(3)) > .ourLeadersCard:nth-child(3){width:var(--activeLeaderCard);}
+    .ourLeadersCards:has(.ourLeadersCard.active:nth-child(3)) > .ourLeadersCard:nth-child(1),.ourLeadersCards:has(.ourLeadersCard.active:nth-child(3)) > .ourLeadersCard:nth-child(2){width:calc((100% - var(--activeLeaderCard)) / 2.3);padding-bottom:0;}
+    /* If 4th card is active */
+    .ourLeadersCards:has(.ourLeadersCard.active:nth-child(4)) > .ourLeadersCard:nth-child(4){width:var(--activeLeaderCard);}
+    .ourLeadersCards:has(.ourLeadersCard.active:nth-child(4)) > .ourLeadersCard:nth-child(5),.ourLeadersCards:has(.ourLeadersCard.active:nth-child(4)) > .ourLeadersCard:nth-child(6){width:calc((100% - var(--activeLeaderCard)) / 2.3);padding-bottom:0;}
+    /* If 5th card is active */
+    .ourLeadersCards:has(.ourLeadersCard.active:nth-child(5)) > .ourLeadersCard:nth-child(5){width:var(--activeLeaderCard);}
+    .ourLeadersCards:has(.ourLeadersCard.active:nth-child(5)) > .ourLeadersCard:nth-child(4),.ourLeadersCards:has(.ourLeadersCard.active:nth-child(5)) > .ourLeadersCard:nth-child(6){width:calc((100% - var(--activeLeaderCard)) / 2.3);padding-bottom:0;}
+    /* If 6th card is active */
+    .ourLeadersCards:has(.ourLeadersCard.active:nth-child(6)) > .ourLeadersCard:nth-child(6){width:var(--activeLeaderCard);}
+    .ourLeadersCards:has(.ourLeadersCard.active:nth-child(6)) > .ourLeadersCard:nth-child(5),.ourLeadersCards:has(.ourLeadersCard.active:nth-child(6)) > .ourLeadersCard:nth-child(4){width:calc((100% - var(--activeLeaderCard)) / 2.3);padding-bottom:0;}
+    /* If 7th card is active */
+    .ourLeadersCards:has(.ourLeadersCard.active:nth-child(7)) > .ourLeadersCard:nth-child(7){width:var(--activeLeaderCard);}
+    /* .ourLeadersCards:has(.ourLeadersCard.active:nth-child(7)) > .ourLeadersCard:nth-child(8){width:calc((100% - var(--activeLeaderCard)) / 2.3);padding-bottom:0;} */
+    /* If 8th card is active */
+    .ourLeadersCards:has(.ourLeadersCard.active:nth-child(8)) > .ourLeadersCard:nth-child(8){width:var(--activeLeaderCard);}
+    /* .ourLeadersCards:has(.ourLeadersCard.active:nth-child(8)) > .ourLeadersCard:nth-child(5),.ourLeadersCards:has(.ourLeadersCard.active:nth-child(8)) > .ourLeadersCard:nth-child(6),.ourLeadersCards:has(.ourLeadersCard.active:nth-child(8)) > .ourLeadersCard:nth-child(7){width:calc((100% - var(--activeLeaderCard)) / 2.3);padding-bottom:0;} */
 }
 @media screen and (max-width:1366px){}
 @media screen and (max-width:1300px){}
@@ -21,25 +60,60 @@
     .beveragesFutureSlide{padding-inline: calc(var(--sv-gap)*1);}
     .footLinks{column-gap:2.562em;row-gap:1em;}
     .footLogo{max-width:140px;}
+    .spiritedOriginSlideImg{max-width:80%;}
 }
 @media screen and (max-width:1024px){}
 @media screen and (max-width:992px){
+    :root{--activeLeaderCard: 75%;}
     nav.siteNav{position: fixed;right: -450px;top: 0;background-color: var(--color-primary);width: 100%;max-width: 400px;height: 100%;z-index: 999;padding: 6em 1em 1em 2em;box-shadow: rgba(255, 255, 255, 0.25) 0px 54px 55px, rgba(255, 255, 255, 0.12) 0px -12px 30px, rgba(255, 255, 255, 0.12) 0px 4px 6px, rgba(255, 255, 255, 0.17) 0px 12px 13px, rgba(255, 255, 255, 0.09) 0px -3px 5px;transition: all 0.5s;}
     nav.siteNav.active{right: 0px;}
     .siteMenu nav > ul.d-flex{flex-direction: column;align-items: flex-start;}
-    .siteMenu nav > ul > li > a{color: var(--color-white);font-size: var(--fs-sub-txt);}
+    .siteMenu nav > ul > li > a{color: var(--color-white);font-size: var(--fs-title-sub);}
     main{margin-top: 74px;}
     .hamburger{display: flex;}
     .defineUsCard .defineUsCardBtn,.defineUsCard .defineUsCardDesc,.defineUsCard .defineUsCardTitle{transform: translateY(0px);opacity: 1;}
+
+    .ourLeadersCard.active{padding:1.25em 0.8em;}
+    .ourLeadersCard.active .ourLeadersCardImg{max-width:45%;}
+    .ourLeadersCard:not(.active){padding-bottom:22em;}
+    .ourLeadersCard,.ourLeadersCards:has(.ourLeadersCard.active:nth-child(1)) > .ourLeadersCard:nth-child(3),.ourLeadersCards:has(.ourLeadersCard.active:nth-child(6)) > .ourLeadersCard:nth-child(7),.ourLeadersCards:has(.ourLeadersCard.active:nth-child(6)) > .ourLeadersCard:nth-child(8),.ourLeadersCards:has(.ourLeadersCard.active:nth-child(2)) > .ourLeadersCard:nth-child(3),.ourLeadersCards:has(.ourLeadersCard.active:nth-child(5)) > .ourLeadersCard:nth-child(4),.ourLeadersCards:has(.ourLeadersCard.active:nth-child(5)) > .ourLeadersCard:nth-child(7),.ourLeadersCards:has(.ourLeadersCard.active:nth-child(5)) > .ourLeadersCard:nth-child(8),.ourLeadersCards:has(.ourLeadersCard.active:nth-child(3)) > .ourLeadersCard:nth-child(1),.ourLeadersCards:has(.ourLeadersCard.active:nth-child(7)) > .ourLeadersCard:nth-child(5),.ourLeadersCards:has(.ourLeadersCard.active:nth-child(7)) > .ourLeadersCard:nth-child(6),.ourLeadersCards:has(.ourLeadersCard.active:nth-child(3)) > .ourLeadersCard:nth-child(2),.ourLeadersCards:has(.ourLeadersCard.active:nth-child(4)) > .ourLeadersCard:nth-child(5),.ourLeadersCards:has(.ourLeadersCard.active:nth-child(8)) > .ourLeadersCard:nth-child(5),.ourLeadersCards:has(.ourLeadersCard.active:nth-child(8)) > .ourLeadersCard:nth-child(6),.ourLeadersCards:has(.ourLeadersCard.active:nth-child(4)) > .ourLeadersCard:nth-child(6),.ourLeadersCards:has(.ourLeadersCard.active:nth-child(4)) > .ourLeadersCard:nth-child(1),.ourLeadersCards:has(.ourLeadersCard.active:nth-child(4)) > .ourLeadersCard:nth-child(2),.ourLeadersCards:has(.ourLeadersCard.active:nth-child(1)) > .ourLeadersCard:nth-child(4),.ourLeadersCards:has(.ourLeadersCard.active:nth-child(2)) > .ourLeadersCard:nth-child(4),.ourLeadersCards:has(.ourLeadersCard.active:nth-child(6)) > .ourLeadersCard:nth-child(4){width: calc(50% - 0.94em);padding-bottom:22em;}
+    /* If 1st card is active */
+    .ourLeadersCards:has(.ourLeadersCard.active:nth-child(1)) > .ourLeadersCard:nth-child(1){width:var(--activeLeaderCard);}
+    .ourLeadersCards:has(.ourLeadersCard.active:nth-child(1)) > .ourLeadersCard:nth-child(2){width:calc((100% - var(--activeLeaderCard)) / 1.15);padding-bottom:0;}
+    /* If 2nd card is active */
+    .ourLeadersCards:has(.ourLeadersCard.active:nth-child(2)) > .ourLeadersCard:nth-child(2){width:var(--activeLeaderCard);}
+    .ourLeadersCards:has(.ourLeadersCard.active:nth-child(2)) > .ourLeadersCard:nth-child(1){width:calc((100% - var(--activeLeaderCard)) / 1.15);padding-bottom:0;}
+    /* If 3rd card is active */
+    .ourLeadersCards:has(.ourLeadersCard.active:nth-child(3)) > .ourLeadersCard:nth-child(3){width:var(--activeLeaderCard);}
+    .ourLeadersCards:has(.ourLeadersCard.active:nth-child(3)) > .ourLeadersCard:nth-child(4){width:calc((100% - var(--activeLeaderCard)) / 1.15);padding-bottom:0;}
+    /* If 4th card is active */
+    .ourLeadersCards:has(.ourLeadersCard.active:nth-child(4)) > .ourLeadersCard:nth-child(4){width:var(--activeLeaderCard);}
+    .ourLeadersCards:has(.ourLeadersCard.active:nth-child(4)) > .ourLeadersCard:nth-child(3){width:calc((100% - var(--activeLeaderCard)) / 1.15);padding-bottom:0;}
+    /* If 5th card is active */
+    .ourLeadersCards:has(.ourLeadersCard.active:nth-child(5)) > .ourLeadersCard:nth-child(5){width:var(--activeLeaderCard);}
+    .ourLeadersCards:has(.ourLeadersCard.active:nth-child(5)) > .ourLeadersCard:nth-child(6){width:calc((100% - var(--activeLeaderCard)) / 1.15);padding-bottom:0;}
+    /* If 6th card is active */
+    .ourLeadersCards:has(.ourLeadersCard.active:nth-child(6)) > .ourLeadersCard:nth-child(6){width:var(--activeLeaderCard);}
+    .ourLeadersCards:has(.ourLeadersCard.active:nth-child(6)) > .ourLeadersCard:nth-child(5){width:calc((100% - var(--activeLeaderCard)) / 1.15);padding-bottom:0;}
+    /* If 7th card is active */
+    .ourLeadersCards:has(.ourLeadersCard.active:nth-child(7)) > .ourLeadersCard:nth-child(7){width:var(--activeLeaderCard);}
+    .ourLeadersCards:has(.ourLeadersCard.active:nth-child(7)) > .ourLeadersCard:nth-child(8){width:calc((100% - var(--activeLeaderCard)) / 1.15);padding-bottom:0;}
+    /* If 8th card is active */
+    .ourLeadersCards:has(.ourLeadersCard.active:nth-child(8)) > .ourLeadersCard:nth-child(8){width:var(--activeLeaderCard);}
+    .ourLeadersCards:has(.ourLeadersCard.active:nth-child(8)) > .ourLeadersCard:nth-child(7){width:calc((100% - var(--activeLeaderCard)) / 1.15);padding-bottom:0;}
     .defineUsCard .defineUsCardTxt::before{transform:scale(1);border-radius: 0;}
+
+    .footPrintInfo > ul{flex-flow: row wrap;row-gap: 1em;}
+    .footPrintInfo > ul > li{min-width: 25%;}
+    .spiritedOriginSlider.slick-slider button.slick-prev,.spiritedOriginSlider.slick-slider button.slick-next{width:30px;height:30px;transform:translateY(-350%);}
+    .mapIndicators{bottom:10%;right:25%;}
 }
 @media screen and (max-width:820px){
-    .brewingCard{width: calc(50% - 20px);}
     .footLinks{column-gap:4.562em;max-height:calc(1.5em * 7);}
-    .hmBannerSec::before,.commBannerCont::before{background:rgba(0,0,0,0.6);}
     .defineUsCards,.defineUsCards > *{gap: 1.5em;}
     .defineUsCardTxt{padding:1em;}
     .siteLogo{max-width:90px;}
+    .spiritedOriginSlideNav{font-size: calc(var(--fs-title) - 5px);}
 
 }
 @media screen and (max-width:768px){
@@ -47,7 +121,7 @@
 }
 @media screen and (max-width:610px){
     :root{--fs-title:30px;--fs-title-sub:16px;--fs-sub-txt:14px;--fs-body:14px;--fs-body-txt:12px;--fs-body-sub:11px;--fs-links:10px;--sv-gap:40px;}
-    .brewingCard,.footLinks{width: 100%;}
+    .footLinks{width: 100%;}
     .footLinks{margin-top: 3em;}
     .footContent{flex-direction: column;}
     .footLinks{flex-direction:row;}
@@ -60,8 +134,33 @@
     .defineUsCardCol2{margin-top: 0;flex-direction: column-reverse;}
     .beveragesFutureSlide{padding-inline: calc(var(--sv-gap)*2);}
     nav.siteNav{max-width: 300px;}
+    .ourLeadersCard.active .ourLeadersCardImg,.ourLeadersCard:not(.active),.ourLeadersCard.active .ourLeadersCardTxt{max-width: 100%;width: 100%;}
+    .ourLeadersCard.active .ourLeadersCardImg{opacity: 0.3;bottom: auto;top: 0;}
+    .ourLeadersCard:not(.active){padding-bottom:25em !important;}
+    .ourLeadersCard,.ourLeadersCards:has(.ourLeadersCard.active:nth-child(1)) > .ourLeadersCard:nth-child(3),.ourLeadersCards:has(.ourLeadersCard.active:nth-child(6)) > .ourLeadersCard:nth-child(7),.ourLeadersCards:has(.ourLeadersCard.active:nth-child(6)) > .ourLeadersCard:nth-child(8),.ourLeadersCards:has(.ourLeadersCard.active:nth-child(2)) > .ourLeadersCard:nth-child(3),.ourLeadersCards:has(.ourLeadersCard.active:nth-child(5)) > .ourLeadersCard:nth-child(4),.ourLeadersCards:has(.ourLeadersCard.active:nth-child(5)) > .ourLeadersCard:nth-child(7),.ourLeadersCards:has(.ourLeadersCard.active:nth-child(5)) > .ourLeadersCard:nth-child(8),.ourLeadersCards:has(.ourLeadersCard.active:nth-child(3)) > .ourLeadersCard:nth-child(1),.ourLeadersCards:has(.ourLeadersCard.active:nth-child(7)) > .ourLeadersCard:nth-child(5),.ourLeadersCards:has(.ourLeadersCard.active:nth-child(7)) > .ourLeadersCard:nth-child(6),.ourLeadersCards:has(.ourLeadersCard.active:nth-child(3)) > .ourLeadersCard:nth-child(2),.ourLeadersCards:has(.ourLeadersCard.active:nth-child(4)) > .ourLeadersCard:nth-child(5),.ourLeadersCards:has(.ourLeadersCard.active:nth-child(8)) > .ourLeadersCard:nth-child(5),.ourLeadersCards:has(.ourLeadersCard.active:nth-child(8)) > .ourLeadersCard:nth-child(6),.ourLeadersCards:has(.ourLeadersCard.active:nth-child(4)) > .ourLeadersCard:nth-child(6),.ourLeadersCards:has(.ourLeadersCard.active:nth-child(4)) > .ourLeadersCard:nth-child(1),.ourLeadersCards:has(.ourLeadersCard.active:nth-child(4)) > .ourLeadersCard:nth-child(2),.ourLeadersCards:has(.ourLeadersCard.active:nth-child(1)) > .ourLeadersCard:nth-child(4),.ourLeadersCards:has(.ourLeadersCard.active:nth-child(2)) > .ourLeadersCard:nth-child(4),.ourLeadersCards:has(.ourLeadersCard.active:nth-child(6)) > .ourLeadersCard:nth-child(4),.ourLeadersCards:has(.ourLeadersCard.active:nth-child(1)) > .ourLeadersCard:nth-child(1),.ourLeadersCards:has(.ourLeadersCard.active:nth-child(1)) > .ourLeadersCard:nth-child(2),.ourLeadersCards:has(.ourLeadersCard.active:nth-child(2)) > .ourLeadersCard:nth-child(2),.ourLeadersCards:has(.ourLeadersCard.active:nth-child(2)) > .ourLeadersCard:nth-child(1),.ourLeadersCards:has(.ourLeadersCard.active:nth-child(3)) > .ourLeadersCard:nth-child(3),.ourLeadersCards:has(.ourLeadersCard.active:nth-child(3)) > .ourLeadersCard:nth-child(4),.ourLeadersCards:has(.ourLeadersCard.active:nth-child(4)) > .ourLeadersCard:nth-child(4),.ourLeadersCards:has(.ourLeadersCard.active:nth-child(4)) > .ourLeadersCard:nth-child(3),.ourLeadersCards:has(.ourLeadersCard.active:nth-child(5)) > .ourLeadersCard:nth-child(5),.ourLeadersCards:has(.ourLeadersCard.active:nth-child(5)) > .ourLeadersCard:nth-child(6),.ourLeadersCards:has(.ourLeadersCard.active:nth-child(6)) > .ourLeadersCard:nth-child(6),.ourLeadersCards:has(.ourLeadersCard.active:nth-child(6)) > .ourLeadersCard:nth-child(5),.ourLeadersCards:has(.ourLeadersCard.active:nth-child(7)) > .ourLeadersCard:nth-child(7),.ourLeadersCards:has(.ourLeadersCard.active:nth-child(7)) > .ourLeadersCard:nth-child(8),.ourLeadersCards:has(.ourLeadersCard.active:nth-child(8)) > .ourLeadersCard:nth-child(8),.ourLeadersCards:has(.ourLeadersCard.active:nth-child(8)) > .ourLeadersCard:nth-child(7){max-width: 100% !important;width: 100% !important;}
+    .footPrintInfo > ul > li{min-width: 100%;}
+    .footPrintInfo > ul > li:not(:last-child)::before{display: none;}
+    .ourLeadersCardTitle{font-size:calc(var(--fs-title) / 1.3);}
+    .spiritedOriginSlideImg{max-width:100%;border-radius:10px;}
+    .spiritedOriginSlider.slick-slider button.slick-prev{left: -40px;}
+    .spiritedOriginSlider.slick-slider button.slick-next{right: -40px;}
+    .spiritedOriginSlideTitle{line-height: 1.3;}
+    .spiritedOriginSlider{max-width: 90%;}
+    .footprintMap > svg{max-width:85%;}
+    .spiritedOriginSlideNav{font-size: calc(var(--fs-title) - 10px);}
+    .spiritedOriginSlideNav::before{top:calc(100% - 18px);}
+    .spiritedOriginSliderNav::before{top:calc(100% - 13px);}
+    .spiritedOriginSlider{margin-top:1.5em;}
+    .spiritedOriginSlideDesc{font-size: var(--fs-body-txt);}
+    .defineUsSec{background-image:url(../images/dottedOp50-bg.png);}
+    .toTopSvg path{transform:translateY(0px);}
+    .toTopSvg .topText{transform:translateY(0px) scale(1);opacity:1;}
+    .brewingCard{margin: 0.5em;}
+    .brewingCards .slick-dots{bottom: -15px;}
 }
-@media screen and (max-width:550px){}
+@media screen and (max-width:550px){
+    .spiritedOriginSlider.slick-slider button.slick-prev,.spiritedOriginSlider.slick-slider button.slick-next{width:25px;height:25px;transform:translateY(-350%);}
+}
 @media screen and (max-width:500px){}
 @media screen and (max-width:428px){}
 @media screen and (max-width:414px){}

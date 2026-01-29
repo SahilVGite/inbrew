@@ -46,6 +46,72 @@ $(document).ready(function () {
     }, 800);
   });
 
+  $(".ourLeadersCard").on("click", function () {
+    // remove active from all
+    $(".ourLeadersCard").removeClass("active");
+
+    // add active to clicked one
+    $(this).addClass("active");
+  });
+
+  const $popup = $("#mapPopup");
+  const $title = $popup.find(".popup-title");
+
+  const rows = {
+    distillery: $popup.find(".row-distillery"),
+    brewery: $popup.find(".row-brewery"),
+    office: $popup.find(".row-office"),
+  };
+
+  const values = {
+    distillery: $popup.find(".distillery"),
+    brewery: $popup.find(".brewery"),
+    office: $popup.find(".office"),
+  };
+
+  $(".stateMarker").on({
+    mouseenter: function () {
+      const $marker = $(this);
+      $title.text($marker.data("name"));
+
+      let hasAnyData = false;
+
+      $.each(rows, function (key, $row) {
+        const value = $marker.data(key);
+
+        if (value && value !== "0") {
+          $row.css("display", "flex");
+          values[key].text(value);
+          hasAnyData = true;
+        } else {
+          $row.hide();
+        }
+      });
+
+      // If no data at all, don't show popup
+      if (hasAnyData) {
+        $popup.addClass("show");
+      } else {
+        $popup.removeClass("show");
+      }
+    },
+
+    mousemove: function (e) {
+      if (!$popup.hasClass("show")) return;
+
+      $popup.css({
+        left: (e.clientX - $popup.outerWidth() / 2) + "px",
+        top: (e.clientY - $popup.outerHeight() - 15) + "px",
+      });
+    },
+
+    mouseleave: function () {
+      $popup.removeClass("show");
+    }
+  });
+
+
+
   // Sliders
   $('.hmBannerSlider').slick({
     infinite: true,
@@ -70,13 +136,39 @@ $(document).ready(function () {
     pauseOnHover: false,
   });
 
-  $('.beveragesFutureSlider').slick({
+  $('.brewingCards').slick({
     infinite: true,
     slidesToShow: 3,
-    slidesToScroll: 3,
-    speed: 1800,
+    slidesToScroll: 1,
     autoplay: true,
     autoplaySpeed: 3000,
+    infinite: true,
+    arrows: false,
+    dots: true,
+    pauseOnHover: false,
+    responsive: [
+      {
+        breakpoint: 992,
+        settings: {
+          slidesToShow: 2,
+        }
+      },
+      {
+        breakpoint: 610,
+        settings: {
+          slidesToShow: 1,
+        }
+      },
+    ]
+  });
+
+  $('.beveragesFutureSlider').slick({
+    infinite: true,
+    slidesToShow: 4,
+    slidesToScroll: 1,
+    speed: 1800,
+    autoplay: true,
+    autoplaySpeed: 1000,
     infinite: true,
     arrows: false,
     // centerMode: true,
@@ -86,20 +178,79 @@ $(document).ready(function () {
     rtl: true,
     responsive: [
       {
+        breakpoint: 1500,
+        settings: {
+          slidesToShow: 3,
+        }
+      },
+      {
         breakpoint: 992,
         settings: {
           slidesToShow: 2,
-          slidesToScroll: 2,
         }
       },
       {
         breakpoint: 610,
         settings: {
           slidesToShow: 1,
-          slidesToScroll: 1
         }
       },
     ]
   });
+
+  var $slider = $('.spiritedOriginSlider');
+  var $navWrap = $('.spiritedOriginSliderNav');
+  var $navItems = $navWrap.find('.spiritedOriginSlideNav');
+
+  var navCount = $navItems.length;
+  var navShow = 5;
+
+  // Main slider
+  $slider.slick({
+    slidesToShow: 1,
+    slidesToScroll: 1,
+    arrows: true,
+    fade: true,
+    infinite: false,
+    dots: false,
+  });
+
+  // If more than 5, make nav a slider
+  if (navCount > navShow) {
+    $navWrap.slick({
+      slidesToShow: navShow,
+      slidesToScroll: 1,
+      arrows: false,
+      infinite: false,
+      focusOnSelect: true,
+    });
+  } else {
+    // normal flex mode
+    $navWrap.addClass("no-slider");
+  }
+
+  // Initial active
+  $navItems.eq(0).addClass('active');
+
+  // Sync from main slider → nav
+$slider.on('beforeChange', function (event, slick, currentSlide, nextSlide) {
+  $navItems.removeClass('active');
+  $navItems.eq(nextSlide).addClass('active');
+
+  // Move nav instantly
+  if (navCount > navShow) {
+    $navWrap.slick('slickGoTo', nextSlide, true); // true = no animation
+  }
+});
+
+
+  // Click on nav → go to slide
+  $navItems.on('click', function () {
+    var index = $(this).index();
+    $slider.slick('slickGoTo', index);
+  });
+
+
+
 
 });
