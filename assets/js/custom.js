@@ -191,6 +191,9 @@ $(document).ready(function () {
   }
   });
 
+  // Lazy Loading
+  $("img, iframe").attr("loading", "lazy");
+
   // Sliders
   $('.hmBannerSlider').slick({
     infinite: true,
