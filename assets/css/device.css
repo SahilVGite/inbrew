@@ -24,7 +24,7 @@
 
     .ourLeadersCard.active .ourLeadersCardTitle{font-size: calc(var(--fs-title-sub) + 10px);}
     .ourLeadersCard.active{padding:1.25em 0.8em;}
-    .ourLeadersCard.active .ourLeadersCardImg{max-width:45%;}
+    .ourLeadersCard.active .ourLeadersCardImg{max-width:45%;top: 0;}
     .ourLeadersCard.active .ourLeadersCardTxt{width:60%;}
     .ourLeadersCard:not(.active){padding-bottom:24em;}
     .ourLeadersCard,.ourLeadersCards:has(.ourLeadersCard.active:nth-child(1)) > .ourLeadersCard:nth-child(4),.ourLeadersCards:has(.ourLeadersCard.active:nth-child(2)) > .ourLeadersCard:nth-child(4),.ourLeadersCards:has(.ourLeadersCard.active:nth-child(3)) > .ourLeadersCard:nth-child(4),.ourLeadersCards:has(.ourLeadersCard.active:nth-child(4)) > .ourLeadersCard:nth-child(1),.ourLeadersCards:has(.ourLeadersCard.active:nth-child(4)) > .ourLeadersCard:nth-child(2),.ourLeadersCards:has(.ourLeadersCard.active:nth-child(4)) > .ourLeadersCard:nth-child(3),.ourLeadersCards:has(.ourLeadersCard.active:nth-child(5)) > .ourLeadersCard:nth-child(7),.ourLeadersCards:has(.ourLeadersCard.active:nth-child(5)) > .ourLeadersCard:nth-child(8),.ourLeadersCards:has(.ourLeadersCard.active:nth-child(6)) > .ourLeadersCard:nth-child(7),.ourLeadersCards:has(.ourLeadersCard.active:nth-child(6)) > .ourLeadersCard:nth-child(8),.ourLeadersCards:has(.ourLeadersCard.active:nth-child(7)) > .ourLeadersCard:nth-child(5),.ourLeadersCards:has(.ourLeadersCard.active:nth-child(7)) > .ourLeadersCard:nth-child(6),.ourLeadersCards:has(.ourLeadersCard.active:nth-child(7)) > .ourLeadersCard:nth-child(8),.ourLeadersCards:has(.ourLeadersCard.active:nth-child(8)) > .ourLeadersCard:nth-child(5),.ourLeadersCards:has(.ourLeadersCard.active:nth-child(8)) > .ourLeadersCard:nth-child(6),.ourLeadersCards:has(.ourLeadersCard.active:nth-child(8)) > .ourLeadersCard:nth-child(7){width: calc(33.333% - 0.94em);padding-bottom:24em;}
@@ -48,10 +48,10 @@
     .ourLeadersCards:has(.ourLeadersCard.active:nth-child(6)) > .ourLeadersCard:nth-child(5),.ourLeadersCards:has(.ourLeadersCard.active:nth-child(6)) > .ourLeadersCard:nth-child(4){width:calc((100% - var(--activeLeaderCard)) / 2.3);padding-bottom:0;}
     /* If 7th card is active */
     .ourLeadersCards:has(.ourLeadersCard.active:nth-child(7)) > .ourLeadersCard:nth-child(7){width:var(--activeLeaderCard);}
-    /* .ourLeadersCards:has(.ourLeadersCard.active:nth-child(7)) > .ourLeadersCard:nth-child(8){width:calc((100% - var(--activeLeaderCard)) / 2.3);padding-bottom:0;} */
+    .ourLeadersCards:has(.ourLeadersCard.active:nth-child(7)) > .ourLeadersCard:nth-child(8){width:calc((100% - var(--activeLeaderCard)) / 2.3);padding-bottom:0;}
     /* If 8th card is active */
     .ourLeadersCards:has(.ourLeadersCard.active:nth-child(8)) > .ourLeadersCard:nth-child(8){width:var(--activeLeaderCard);}
-    /* .ourLeadersCards:has(.ourLeadersCard.active:nth-child(8)) > .ourLeadersCard:nth-child(5),.ourLeadersCards:has(.ourLeadersCard.active:nth-child(8)) > .ourLeadersCard:nth-child(6),.ourLeadersCards:has(.ourLeadersCard.active:nth-child(8)) > .ourLeadersCard:nth-child(7){width:calc((100% - var(--activeLeaderCard)) / 2.3);padding-bottom:0;} */
+    .ourLeadersCards:has(.ourLeadersCard.active:nth-child(8)) > .ourLeadersCard:nth-child(7){width:calc((100% - var(--activeLeaderCard)) / 2.3);padding-bottom:0;}
 }
 @media screen and (max-width:1366px){}
 @media screen and (max-width:1300px){}
@@ -61,6 +61,10 @@
     .footLinks{column-gap:2.562em;row-gap:1em;}
     .footLogo{max-width:140px;}
     .spiritedOriginSlideImg{max-width:80%;}
+    .exploreBlendsBtn a > span > svg{transform:translateX(0);}
+    details:hover > summary:after{transform:rotate(0deg) translateY(-50%);}
+    details[open] > summary:after{transform:rotate(-90deg) translate(50%);}
+    .ourLeadersCard.active .ourLeadersCardImg{top: auto;}
 }
 @media screen and (max-width:1024px){}
 @media screen and (max-width:992px){
@@ -107,6 +111,9 @@
     .footPrintInfo > ul > li{min-width: 25%;}
     .spiritedOriginSlider.slick-slider button.slick-prev,.spiritedOriginSlider.slick-slider button.slick-next{width:30px;height:30px;transform:translateY(-350%);}
     .mapIndicators{bottom:10%;right:25%;}
+    details{padding-inline: 0;}
+    .blendingNBrewingBrandsLogo{padding-block:1.5em;gap:2.5em;}
+
 }
 @media screen and (max-width:820px){
     .footLinks{column-gap:4.562em;max-height:calc(1.5em * 7);}
@@ -157,6 +164,11 @@
     .toTopSvg .topText{transform:translateY(0px) scale(1);opacity:1;}
     .brewingCard{margin: 0.5em;}
     .brewingCards .slick-dots{bottom: -15px;}
+    .ctn-info{flex-direction: column;}
+    .ctn-info > *{max-width: 100%;}
+    .blendingNBrewingBrandsLogo{padding-block:1em;gap:1em;}
+    .exploreBlendsBtn a{gap:0.5em;padding:0.625em 1em;}
+    summary:after{width:12px;height:12px;}
 }
 @media screen and (max-width:550px){
     .spiritedOriginSlider.slick-slider button.slick-prev,.spiritedOriginSlider.slick-slider button.slick-next{width:25px;height:25px;transform:translateY(-350%);}
