@@ -236,3 +236,31 @@ details[open] .ctn-info p,details[open] .ctn-info .ctn-info-img{transform: trans
 .exploreBlendsBtn a > span:last-child:has(svg){overflow: hidden;}
 .exploreBlendsBtn a > span > svg{transform: translateX(-50%);transition: all 0.5s;}
 .exploreBlendsBtn a:hover > span > svg{transform: translateX(0px);}
+
+/* Our Brand */
+.ourBrandTabbingSec{margin-top: calc(var(--sv-gap)/2);}
+.ourBrandContent{max-width: 880px;margin-inline: auto;}
+.tabBtn{font-size: var(--fs-sub-txt);color: var(--color-senary);font-weight: var(--fw-medium);transition: all 0.3s;width: 100%;text-align: center;padding-bottom: 1em;}
+.tabBtn.active{color: var(--color-secondary);}
+.tabBtns{border-bottom: 1px solid var(--color-secondary);margin-bottom: 2.5em;}
+.tabBtns::before{content:"";position:absolute;top:calc(100% - 3px);left:var(--tab-left,0px);width:var(--tab-width,0px);height:6px;border-radius:50px;background-color:var(--color-secondary);transition:all 0.5s ease;}
+.tabBtns > ul{overflow-x: auto;}
+.ourBrandTabContent{column-gap: 1.25em;row-gap: 4.375em;align-items: stretch;transition: all 0.3s;}
+.ourBrandTabContent:has(.ourBrandTabContentCard:hover){align-items: flex-start;}
+.ourBrandTabContentCard{padding:1.75em 2.375em;width:calc(33.3333% - 1em);display:flex;flex-direction:column;justify-content:center;align-items:center;}
+.ourBrandTabContentCard::before{background:#FFFFFF;border-radius:20px;box-shadow:rgba(0,0,0,0.1) 0px 4px 12px;content:"";width:100%;height:100%;position:absolute;top:0;left:0;z-index:-1;transition:all 0.3s;}
+.ourBrandTabContentCardLink > *{font-size:var(--fs-body-txt);color:var(--color-primary);font-weight:var(--fw-medium);padding:0.625em 1.25em;background-color:#EFEFEF;float:left;border-radius:50px;margin-top:1.1875em;}
+.ourBrandTabContentCardLink{opacity:0;transform:scale(0);height:0px;transition:all 0.3s;}
+.ourBrandTabContentCard:hover .ourBrandTabContentCardLink{opacity:1;transform:scale(1);height:44px;}
+.ourBrandTabContentCard:hover::before{top:20%;height:80%;}
+
+/* Our Brand PopUp */
+.ourBrandPop{max-width: 700px;margin-inline: auto;position: relative;background-color: var(--color-secondary);border-radius: 13px;overflow: hidden;}
+.ourBrandPop button.mfp-close{right:auto;left:10px;top:10px;width:fit-content;height:fit-content;line-height:1;}
+.ourBrandPopContent > *{width:50%;}
+.ourBrandPopTxt{padding: 0.8125em;}
+.ourBrandPopTitle > *{font-size: calc(var(--fs-title-sub) + 1px);font-family: var(--Caladea-ff);font-weight: var(--fw-regular);color: #FFFFFF;}
+.ourBrandPopDesc > *{font-size: calc(var(--fs-body-txt) - 3px);font-weight: var(--fw-regular);color: #FFFFFF;margin-block: 1em;}
+.ourBrandPopBtn > *{font-size: calc(var(--fs-links) - 2px);font-weight: var(--fw-regular);color: #FFFFFF;line-height: 1.3;text-decoration: underline !important;}
+.ourBrandPopImg > img{height: 100%;width: 100%;object-fit: cover;}
+.mfp-scroll-lock{overflow: hidden !important;}

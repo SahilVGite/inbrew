@@ -110,7 +110,86 @@ $(document).ready(function () {
     }
   });
 
+  // Tab Section
+  $(".tabBtn").click(function () {
+    var tab_id = $(this).data("id");
 
+    $(".tabBtn, .tab-content").removeClass("active");
+    $(this).addClass("active");
+    $("#" + tab_id).addClass("active");
+
+    // Reinitialize Slick slider inside the active tab
+    // $("#" + tab_id).find(".webStoriesSlider").slick("setPosition");
+  });
+
+  // active tab
+  const $container = $('.tabBtns');
+  const $tabs = $container.find('.tabBtn');
+
+  function moveIndicator() {
+
+    const $active = $container.find('.tabBtn.active');
+
+    if (!$active.length) return;
+
+    const containerOffset = $container.offset().left;
+    const tabOffset = $active.offset().left;
+
+    const left = tabOffset - containerOffset;
+    const width = $active.outerWidth();
+
+    $container.css({
+      '--tab-left': left + 'px',
+      '--tab-width': width + 'px'
+    });
+  }
+
+  /* Initial Position */
+  moveIndicator();
+
+  /* On Click */
+  $tabs.on('click', function () {
+
+    $tabs.removeClass('active');
+    $(this).addClass('active');
+
+    moveIndicator();
+
+  });
+
+  /* On Window Resize */
+  $(window).on('resize', function () {
+    moveIndicator();
+  });
+
+
+  // Our Brand PopUp
+  $('.ourBrandPopup').magnificPopup({
+    type: 'inline',
+
+    fixedContentPos: false,
+    fixedBgPos: true,
+
+    overflowY: 'auto',
+
+    closeBtnInside: true,
+    preloader: false,
+
+    midClick: true,
+    removalDelay: 300,
+    mainClass: 'my-mfp-zoom-in',
+    callbacks: {
+
+    open: function () {
+      $('html, body').addClass('mfp-scroll-lock');
+    },
+
+    close: function () {
+      $('html, body').removeClass('mfp-scroll-lock');
+    }
+
+  }
+  });
 
   // Sliders
   $('.hmBannerSlider').slick({
@@ -233,15 +312,15 @@ $(document).ready(function () {
   $navItems.eq(0).addClass('active');
 
   // Sync from main slider → nav
-$slider.on('beforeChange', function (event, slick, currentSlide, nextSlide) {
-  $navItems.removeClass('active');
-  $navItems.eq(nextSlide).addClass('active');
+  $slider.on('beforeChange', function (event, slick, currentSlide, nextSlide) {
+    $navItems.removeClass('active');
+    $navItems.eq(nextSlide).addClass('active');
 
-  // Move nav instantly
-  if (navCount > navShow) {
-    $navWrap.slick('slickGoTo', nextSlide, true); // true = no animation
-  }
-});
+    // Move nav instantly
+    if (navCount > navShow) {
+      $navWrap.slick('slickGoTo', nextSlide, true); // true = no animation
+    }
+  });
 
 
   // Click on nav → go to slide
