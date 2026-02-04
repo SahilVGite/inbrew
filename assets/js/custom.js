@@ -210,7 +210,7 @@ $(document).ready(function () {
     slidesToShow: 1,
     slidesToScroll: 1,
     autoplay: true,
-    autoplaySpeed: 3000,
+    autoplaySpeed: 6000,
     infinite: true,
     arrows: false,
     fade: true,

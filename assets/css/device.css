@@ -65,6 +65,9 @@
     details:hover > summary:after{transform:rotate(0deg) translateY(-50%);}
     details[open] > summary:after{transform:rotate(-90deg) translate(50%);}
     .ourLeadersCard.active .ourLeadersCardImg{top: auto;}
+    .ourBrandBtnOnHover{opacity: 1;height:auto;position:relative;order:2;margin-top: 1em;}
+    .ourBrandBtnOnHover.mobileBtn{display: flex;pointer-events: all;}
+    .ourBrandBtnOnHover.desktopBtn{display: none;}
 }
 @media screen and (max-width:1024px){}
 @media screen and (max-width:992px){
@@ -115,7 +118,7 @@
     .blendingNBrewingBrandsLogo{padding-block:1.5em;gap:2.5em;}
 
     .mfp-content{padding-inline: 1em;}
-    .ourBrandTabContentCardLink{opacity:1;transform:scale(1);height:auto;}
+    .ourBrandTabContentCardLink{opacity:1;position: relative;}
     .ourBrandTabContent,.ourBrandTabContent:has(.ourBrandTabContentCard:hover){align-items: stretch;}
     .ourBrandTabContentCard:hover::before{top:0;height:100%;}
     .ourBrandTabContent{gap: 1.5em;}
