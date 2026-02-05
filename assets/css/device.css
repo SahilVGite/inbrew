@@ -122,6 +122,10 @@
     .ourBrandTabContent,.ourBrandTabContent:has(.ourBrandTabContentCard:hover){align-items: stretch;}
     .ourBrandTabContentCard:hover::before{top:0;height:100%;}
     .ourBrandTabContent{gap: 1.5em;}
+    
+    .desktophmBannerSlider{display: none;}
+    .mobilehmBannerSlider{display: block;}
+    .hmBannerSec::before{background: linear-gradient(280deg, rgba(34, 10, 5, 0) 0%, rgba(0, 0, 0, 0.8) 100%);width: 105%;}
 }
 @media screen and (max-width:820px){
     .footLinks{column-gap:4.562em;max-height:calc(1.5em * 7);}
