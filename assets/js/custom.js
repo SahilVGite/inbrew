@@ -333,6 +333,25 @@ $(document).ready(function () {
   });
 
 
+  $('details').on('click', 'summary', function(e) {
+    e.preventDefault();
+    var $details = $(this).closest('details');
+    
+    // Close all other details and reset their icons
+    $('details').not($details).prop('open', false);
+    $('details').not($details).find('.wwdFaqIcon').css('transform', 'rotate(90deg)');
+    
+    // Toggle current details
+    if ($details.prop('open')) {
+        $details.prop('open', false);
+        $details.find('.wwdFaqIcon').css('transform', 'rotate(90deg)');
+    } else {
+        $details.prop('open', true);
+        $details.find('.wwdFaqIcon').css('transform', 'rotate(148deg)');
+    }
+  });
 
+  // Add smooth transition
+  $('.wwdFaqIcon').css('transition', 'transform 0.3s ease');
 
 });

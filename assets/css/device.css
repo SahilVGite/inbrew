@@ -20,6 +20,7 @@
     .footPrintInfo > ul > li{padding-inline:2em;}
     .commonSecTitleBottomGap{margin-bottom:0.3em;}
     .footprintMap > svg{max-width:60%;}
+    .ourFootprintSec .commonSecTitle{margin-bottom: 1.1em;}
 
 
     .ourLeadersCard.active .ourLeadersCardTitle{font-size: calc(var(--fs-title-sub) + 10px);}
@@ -68,11 +69,15 @@
     .ourBrandBtnOnHover{opacity: 1;height:auto;position:relative;order:2;margin-top: 1em;}
     .ourBrandBtnOnHover.mobileBtn{display: flex;pointer-events: all;}
     .ourBrandBtnOnHover.desktopBtn{display: none;}
+    .footPrintContent{gap:3em;}
+    .ourFootprintSec .main-wrapper{max-width: 84.211%;margin-inline: auto;}
 }
 @media screen and (max-width:1024px){}
 @media screen and (max-width:992px){
     :root{--activeLeaderCard: 75%;}
-    nav.siteNav{position: fixed;right: -450px;top: 0;background-color: var(--color-primary);width: 100%;max-width: 400px;height: 100%;z-index: 999;padding: 6em 1em 1em 2em;box-shadow: rgba(255, 255, 255, 0.25) 0px 54px 55px, rgba(255, 255, 255, 0.12) 0px -12px 30px, rgba(255, 255, 255, 0.12) 0px 4px 6px, rgba(255, 255, 255, 0.17) 0px 12px 13px, rgba(255, 255, 255, 0.09) 0px -3px 5px;transition: all 0.5s;}
+    nav.siteNav{position: fixed;right: -450px;top: 0;background-color: var(--color-primary);width: 100%;max-width: 400px;height: 100%;z-index: 999;padding: 6em 1em 1em 2em;transition: all 0.5s;}
+/* box-shadow: rgba(255, 255, 255, 0.25) 0px 54px 55px, rgba(255, 255, 255, 0.12) 0px -12px 30px, rgba(255, 255, 255, 0.12) 0px 4px 6px, rgba(255, 255, 255, 0.17) 0px 12px 13px, rgba(255, 255, 255, 0.09) 0px -3px 5px; */
+
     nav.siteNav.active{right: 0px;}
     .siteMenu nav > ul.d-flex{flex-direction: column;align-items: flex-start;}
     .siteMenu nav > ul > li > a{color: var(--color-white);font-size: var(--fs-title-sub);}
@@ -126,6 +131,9 @@
     .desktophmBannerSlider{display: none;}
     .mobilehmBannerSlider{display: block;}
     .hmBannerSec::before{background: linear-gradient(280deg, rgba(34, 10, 5, 0) 0%, rgba(0, 0, 0, 0.8) 100%);width: 105%;}
+    .footPrintContentLeft .tabBtn span.footPrintTabNumb{width:35px;}
+    .ourFootprintSec .commonSecTitle{margin-bottom: 0.5em;}
+    .ourFootprintSec{padding-top: 0;}
 }
 @media screen and (max-width:820px){
     .footLinks{column-gap:4.562em;max-height:calc(1.5em * 7);}
@@ -134,10 +142,21 @@
     .siteLogo{max-width:90px;}
     .spiritedOriginSlideNav{font-size: calc(var(--fs-title) - 5px);}
 
+    .ourBrandTabContentCard{min-height: auto;}
+    .ourBrandTabContentCard .ourBrandTabContentCardImg {transition: all 0.3s;max-width: 120px;}
+    .ourBrandTabContentCard:has(.ourBrandTabContentCardLink):hover .ourBrandTabContentCardImg {transform: scale(1) translateY(0px);}
+    .ourBrandTabContentCard:has(.ourBrandTabContentCardLink):hover::before {top: 0; height: 100%;}
+
 }
 @media screen and (max-width:768px){
     .defineUsCardCol2{margin-top:1.4375em;}
 }
+
+@media screen and (min-width: 611px){
+    .deskBlendView{display: flex;}
+    .mobBlendView{display: none;}
+}
+
 @media screen and (max-width:610px){
     :root{--fs-title:30px;--fs-title-sub:16px;--fs-sub-txt:14px;--fs-body:14px;--fs-body-txt:12px;--fs-body-sub:11px;--fs-links:10px;--sv-gap:40px;}
     .footLinks{width: 100%;}
@@ -183,20 +202,57 @@
     summary:after{width:12px;height:12px;}
     .ourBrandTabContentCard{width:calc(50% - 0.5em);padding: 1.5em;}
     .ourBrandTabContent{gap: 1em;}
-    .tabBtn{padding: 0 1em 0.5em 1em;border-bottom: 3px solid transparent;}
-    .tabBtn.active{border-color: var(--color-secondary);}
-    .tabBtns > ul{justify-content: flex-start;}
-    .tabBtns::before{display: none;}
+    .ourBrandTabbingSec .tabBtn{padding: 0 1em 0.5em 1em;border-bottom: 3px solid transparent;}
+    .ourBrandTabbingSec .tabBtn.active{border-color: var(--color-secondary);}
+    .ourBrandTabbingSec .tabBtns > ul{justify-content: flex-start;}
+    .ourBrandTabbingSec .tabBtns::before{display: none;}
+
+
+    .ctn-info{gap: 1.5em;}
+    .ctn-info p{max-width: 100%;}
+    .ctn-info .ctn-info-img{max-width: 100%;}
+    details .wwdFaqIcon {width: 14px; height: 14px;}
+
+    .blendingNBrewingBrandsLogoImg {max-width: 70px;}
+
+
+    .deskBlendView{display: none;}
+    .mobBlendView{display: block;}
+
+    .defineUsCards.mobBlendView{display: flex; gap: 0.8em;}
+    .defineUsCards.mobBlendView .defineUsCardCol2 .defineUsCard:last-child .defineUsCardTxt::before {background-color:var(--color-tertiary) ; transform-origin: 0% 0%;}
+    .defineUsCards.mobBlendView .defineUsCardCol2 .defineUsCard:first-child .defineUsCardTxt::before {background-color: var(--color-primary);transform-origin: 0% 100%;}
+
+    .beveragesFutureSlider .slick-slide {pointer-events: none;}
+    .footPrintContent{flex-direction: column;}
+    .footPrintContentLeft,.footPrintContentRight,.footPrintContentLeft .commonSecTxt{max-width:100%;}
 
 }
 @media screen and (max-width:550px){
     .spiritedOriginSlider.slick-slider button.slick-prev,.spiritedOriginSlider.slick-slider button.slick-next{width:25px;height:25px;transform:translateY(-350%);}
 }
-@media screen and (max-width:500px){}
-@media screen and (max-width:428px){}
-@media screen and (max-width:414px){}
+@media screen and (max-width:500px){
+    .ourBrandTabContentCard .ourBrandTabContentCardImg {transition: all 0.3s; max-width: 70px;}
+    .ourBrandTabContentCardLink > * {text-align: center;}
+}
+@media screen and (max-width:428px){
+    .hmBannerContent{min-height: 72.2dvh;}
+}
+@media screen and (max-width:414px){
+    details .wwdFaqIcon {width: 10px; height: 10px;}
+
+    .blendingNBrewingBrandsLogoImg {max-width: 50px;}
+}
 @media screen and (max-width:395px){}
 @media screen and (max-width:375px){}
 @media screen and (max-width:350px){
     :root{--fs-title:24px;--fs-title-sub:15px;--fs-sub-txt:14px;--fs-body:13px;--fs-body-txt:11px;--fs-body-sub:10px;--fs-links:9px;--sv-gap:40px;}
+
+    .ourBrandTabContentCard{width:calc(50% - 0.5em);padding: 1em;}
+
+    .blendingNBrewingBrandsLogoImg {max-width: 34px;}
+
+    .exploreBlendsBtn a{font-size: 12px;}
+    .exploreBlendsBtn a span svg {width: 30px !important;}
+    .hmBannerContent{min-height: 68.2dvh;}
 }
